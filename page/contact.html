@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link href="../assets/css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- navbar -->
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">LOGO</a>
+        <!-- collapse button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto gap-3">
+            <!-- each li element is part of the navbar -->
+            <!-- HOME -->
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <!-- Projects -->
+            <li class="nav-item">
+              <a class="nav-link" href="#">Projects</a>
+            </li>
+            <!-- TODO: link to projects page -->
+            <!-- Contact -->
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">Contact</a>
+            </li>
+            <!-- TODO: link to contact page -->
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/"
+                ><img
+                  src="../assets/images/github-mark.png"
+                  alt="github logo"
+                  height="20px"
+              /></a>
+            </li>
+            <!-- TODO: link to contact page -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- form -->
+    <fieldset>
+      <form action="" class="form-message">
+        <label class="label" for="email">E-mail</label><br />
+        <input class="input" type="email" name="email" required /><br />
+        <label class="label" for="message">Message</label><br />
+        <textarea
+          class="input"
+          name="message"
+          cols="50"
+          rows="5"
+          spellcheck="true"
+          required
+        >
+        </textarea
+        ><br />
+        <input id="input-button" type="submit" value="submit" />
+      </form>
+    </fieldset>
+  </body>
+</html>

@@ -1,0 +1,222 @@
+body {
+  /* color scheme */
+  font-family: "Courier New", Courier, monospace;
+  color: black;
+  background-color: #eaebea;
+  padding: 15px;
+  /* css grid */
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  gap: 2%;
+  max-height: 100vh;
+}
+
+@media (max-width: 380px) {
+  body {
+    min-width: 380px;
+  }
+}
+/* ****************************************************************************
+ * HEADER SECTION
+ * ************************************************************************* */
+header {
+  grid-column: 1/10;
+  grid-row: 1/1;
+}
+
+h1 {
+  padding: 10px;
+  text-align: left;
+}
+
+/* ****************************************************************************
+ * CENTRAL SECTION 
+ * ************************************************************************* */
+
+/* NAV SECTION ************************************************************* */
+
+nav {
+  font-size: 2rem;
+  grid-column: 1/10;
+  grid-row: 2/9;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* TODO: nav grid full */
+
+#nav.grid-left {
+  grid-column: 1/1;
+  grid-row: 2/9;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+}
+
+#nav.grid-top {
+  grid-column: 1/10;
+  grid-row: 2/2;
+  font-size: 1.5rem;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1ft;
+}
+
+.gate {
+  text-align: center;
+  background-color: #eaebea;
+  border-style: none;
+}
+
+.gate.highlighted {
+  background-color: #e0e0e0;
+  border-color: #e0e0e0;
+  border-style: solid;
+  border-radius: 30px;
+}
+
+#about {
+  grid-column: 4/4;
+  grid-row: 1/1;
+}
+
+#about.grid-left {
+  grid-column: 1/1;
+  grid-row: 1/1;
+}
+
+#about.grid-top {
+  grid-column: 1/1;
+  grid-row: 1/1;
+}
+
+#projects {
+  grid-column: 3/3;
+  grid-row: 2/2;
+}
+
+#projects.grid-left {
+  grid-column: 1/1;
+  grid-row: 2/2;
+}
+
+#projects.grid-top {
+  grid-column: 2/2;
+  grid-row: 1/1;
+}
+
+#contact {
+  grid-column: 2/2;
+  grid-row: 3/3;
+}
+
+#contact.grid-left {
+  grid-column: 1/1;
+  grid-row: 3/3;
+}
+
+#contact.grid-top {
+  grid-column: 3/3;
+  grid-row: 1/1;
+}
+
+#github {
+  grid-column: 1/1;
+  grid-row: 4/4;
+}
+
+#github.grid-left {
+  grid-column: 1/1;
+  grid-row: 4/4;
+}
+
+#github.grid-top {
+  grid-column: 4/4;
+  grid-row: 1/1;
+}
+
+/* MAIN SECTION ************************************************************ */
+
+main {
+  display: none;
+  margin: 2px;
+  border-style: solid;
+  overflow: scroll;
+}
+
+#main.grid-min-show {
+  display: block;
+  grid-column: 2/10;
+  grid-row: 2/9;
+}
+
+#main.grid-max-show {
+  display: block;
+  grid-column: 1/10;
+  grid-row: 3/9;
+}
+
+#min-max-container {
+  text-align: right;
+}
+
+#min-button,
+#max-button {
+  border-radius: 5px;
+}
+
+/* *************************************************************************** 
+ *  FOOTER SECTION
+ * ************************************************************************* */
+
+footer {
+  grid-column: 1/10;
+  grid-row: 9/10;
+}
+
+/* styling ----------------------------------------------------------------- */
+
+/* TODO: responsiveness (this sould be based on nav on top layout) */
+
+@media (max-width: 600px) {
+  header {
+    grid-column: 1/100;
+    grid-row: 1/10;
+  }
+
+  /* nav main*/
+  nav {
+    grid-column: 1/100;
+    grid-row: 11/90;
+  }
+
+  main {
+    display: none;
+  }
+
+  footer {
+    grid-column: 1/100;
+    grid-row: 91/100;
+  }
+
+  #nav.grid-responsive {
+    grid-column: 1/100;
+    grid-row: 11/20;
+  }
+
+  #main.grid-responsive {
+    display: block;
+    grid-column: 1/100;
+    grid-row: 21/90;
+  }
+
+  #nav {
+    text-align: center;
+  }
+  .gate.grid-responsive {
+    font-size: 1rem;
+    display: inline;
+  }
+}
