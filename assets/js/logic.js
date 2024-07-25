@@ -69,23 +69,63 @@ maxMainButton.addEventListener("click", function () {
   github.classList.remove("grid-left");
 });
 
-// Show main when any button of the navbar is clicked (only if main is hidden)
-nav.addEventListener("click", () => {
-  for (element of nav.classList) {
-    // if "grid-top" is a current class of nav, then main is already on screen
-    if ("grid-top" === element) {
-      return;
+// Open main window when clicking on pertinent buttons
+for (let i = gateElem.length - 2; i >= 0; i--) {
+  gateElem[i].addEventListener("click", () => {
+    for (element of nav.classList) {
+      // if "grid-top" is a current class of nav, then main is already on screen
+      if ("grid-top" === element) {
+        return;
+      }
     }
-  }
-  main.classList.add("grid-min-show");
-  nav.classList.add("grid-left");
-  about.classList.add("grid-left");
-  projects.classList.add("grid-left");
-  contact.classList.add("grid-left");
-  github.classList.add("grid-left");
-});
+    main.classList.add("grid-min-show");
+    nav.classList.add("grid-left");
+    about.classList.add("grid-left");
+    projects.classList.add("grid-left");
+    contact.classList.add("grid-left");
+    github.classList.add("grid-left");
+  });
+}
 
 // TODO: show pertinent element when specific buttons of nav are pressed.
+let mainElements = [];
 
-// Manipulating the stylesheet
-// const stylesheet = document.styleSheets[0];
+const contactForm = document.getElementById("contact-form");
+mainElements.push(contactForm);
+
+const aboutContainer = document.getElementById("about-container");
+mainElements.push(aboutContainer);
+
+const projectsContainer = document.getElementById("projects-container");
+mainElements.push(projectsContainer);
+
+// open contact in main
+contact.addEventListener("click", function () {
+  for (element of mainElements) {
+    element.classList.remove("show");
+  }
+  contactForm.classList.add("show");
+});
+
+projects.addEventListener("click", function () {
+  for (element of mainElements) {
+    element.classList.remove("show");
+  }
+  projectsContainer.classList.add("show");
+});
+
+// open about
+about.addEventListener("click", function () {
+  for (element of mainElements) {
+    element.classList.remove("show");
+  }
+  aboutContainer.classList.add("show");
+});
+
+// Form -----------------------------------------------------------------------
+
+contactForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  let userName = contactForm.elements.namedItem("form-name").value;
+  alert("I'll contact you, " + userName + "!");
+});
